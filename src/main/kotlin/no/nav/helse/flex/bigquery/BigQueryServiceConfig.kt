@@ -15,4 +15,4 @@ class BigQueryServiceConfig {
     }
 }
 
-const val dataset = "korrigering_metrikk"
+const val dataset = "flex_dataset"
