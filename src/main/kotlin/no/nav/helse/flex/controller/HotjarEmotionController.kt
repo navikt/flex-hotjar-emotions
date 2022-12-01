@@ -24,9 +24,22 @@ class HotjarEmotionController(
         sendt = Instant.now()
     )
 
+    private fun HotjarEmotionArkivRequest.tilBqRequest(): HotjarEmotion = HotjarEmotion(
+        emotion = this.emotion,
+        survey = this.survey,
+        sendt = this.sendt.toInstant()
+    )
+
     @PostMapping(value = ["/api/v1/emotion"], consumes = [APPLICATION_JSON_VALUE])
     @ResponseStatus(code = HttpStatus.CREATED)
     fun lagreEmotion(@RequestBody hotjarEmotionRequest: HotjarEmotionRequest) {
+        log.info("Lagrer emotion $hotjarEmotionRequest")
+        hotjarEmotionTable.lagreHotjarEmotion(hotjarEmotionRequest.tilBqRequest())
+    }
+
+    @PostMapping(value = ["/api/v1/emotion/arkiv"], consumes = [APPLICATION_JSON_VALUE])
+    @ResponseStatus(code = HttpStatus.CREATED)
+    fun lagreEmotion(@RequestBody hotjarEmotionRequest: HotjarEmotionArkivRequest) {
         log.info("Lagrer emotion $hotjarEmotionRequest")
         hotjarEmotionTable.lagreHotjarEmotion(hotjarEmotionRequest.tilBqRequest())
     }
