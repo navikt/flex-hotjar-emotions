@@ -1,0 +1,8 @@
+GCP_TEAM_PROJECT_ID: test
+
+spring:
+  main.banner-mode: 'off'
+  profiles:
+    active: test
+
+logging.config: "classpath:logback-test.xml"
