@@ -1,3 +1,4 @@
 app: flex-hotjar-emotions
 namespace: flex
 team: flex
+ingress: https://flex-hotjar-emotions.dev.intern.nav.no
