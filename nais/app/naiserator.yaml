@@ -43,4 +43,4 @@ spec:
     inbound:
       rules:
         - application: spinnsyn-frontend
-        - application: sykepengesoknad-frontend
+        - application: sykepengesoknad
