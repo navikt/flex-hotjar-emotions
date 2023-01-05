@@ -22,7 +22,7 @@ repositories {
 
 val logstashLogbackEncoderVersion = "7.2"
 val kluentVersion = "1.72"
-val bqVersion = "2.20.0"
+val bqVersion = "2.20.1"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
