@@ -1,3 +1,5 @@
 app: flex-hotjar-emotions
 namespace: flex
 team: flex
+cpu: 200m
+memory: 400Mi
