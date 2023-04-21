@@ -34,13 +34,12 @@ class TableCreator(
                 Field.newBuilder("emotion", StandardSQLTypeName.INT64)
                     .setDescription("Emotion som ble gitt i feedback. 1 til 5").build(),
                 Field.newBuilder("sendt", StandardSQLTypeName.TIMESTAMP)
-                    .setDescription("Tidspunktet feedbacken ble sendt").build(),
+                    .setDescription("Tidspunktet feedbacken ble sendt").build()
             )
         )
     }
 
     fun createTable(tableName: String, schema: Schema) {
-
         val table = bigQuery.getTable(TableId.of(dataset, tableName))
         if (table != null && table.exists()) {
             log.info("Table $tableName eksisterer allerede")

@@ -15,7 +15,6 @@ class HotjarEmotionTable(val bq: BigQuery) {
     val log = logger()
 
     fun lagreHotjarEmotion(he: HotjarEmotion) {
-
         val insertAll = bq.insertAll(
             InsertAllRequest.newBuilder(TableId.of(dataset, hotjarEmotionTable))
                 .also { builder ->
@@ -42,5 +41,5 @@ private fun HotjarEmotion.tilMap(): Map<String, Any> {
 data class HotjarEmotion(
     val survey: String,
     val emotion: Int,
-    val sendt: Instant,
+    val sendt: Instant
 )
