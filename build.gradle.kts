@@ -20,7 +20,7 @@ repositories {
     }
 }
 
-val logstashLogbackEncoderVersion = "7.3"
+val logstashLogbackEncoderVersion = "7.4"
 val kluentVersion = "1.73"
 val bqVersion = "2.27.0"
 
